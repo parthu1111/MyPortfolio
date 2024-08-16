@@ -9,11 +9,11 @@ function ProjectDetail({token}) {
   console.log(id);
   
   let [data, setData] = useState(null);
-  let query = "select FIELDS(ALL) from Project__c where Id='"+id+"' limit 200";
-  let url = crosURL + 'https://conga48-dev-ed.develop.my.salesforce.com/services/data/v61.0/query/?q=' + query;
   let fetchData = useFetchState();
   useEffect(() => {
       if (token != null && data == null) {
+        let query = "select FIELDS(ALL) from Project__c where Id='"+id+"' limit 200";
+        let url = crosURL + 'https://conga48-dev-ed.develop.my.salesforce.com/services/data/v61.0/query/?q=' + query;
           fetchData(url, 'GET', null, { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' })
               .then(res => {
                   if (res.ok) {
@@ -23,7 +23,7 @@ function ProjectDetail({token}) {
               })
       }
 
-  }, [token])
+  }, [token,data,fetchData,id])
 
   var settings = {
     dots: true,
@@ -49,7 +49,7 @@ function ProjectDetail({token}) {
                 <Slider {...settings}>
                   {data.imageLinks__c.split(',').map((item,index)=>(
                     <div className="img_box" key={index}>
-                    <img src={item} />
+                    <img src={item} alt='img not found'/>
                   </div>
                   ))}
                 </Slider>

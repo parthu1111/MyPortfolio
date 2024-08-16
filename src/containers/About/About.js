@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { useFetchState } from "../../customHook/useFetchState";
-import { crosURL } from "../../constant";
 import SubHeader from '../SubHeader/SubHeader';
 
 const About = ({data}) => {

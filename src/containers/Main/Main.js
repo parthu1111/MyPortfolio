@@ -28,7 +28,7 @@ function Main({ token }) {
             })
         }
 
-    },[token])
+    },[token,fetchData,data])
     return (
         <>
         {data?

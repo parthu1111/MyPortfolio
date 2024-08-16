@@ -1,5 +1,7 @@
 
+import { NavLink } from 'react-router-dom';
 import logo from '../../Images/test.png';
+import { email, github, linkedin } from '../../constant';
 const Home = () => {
     return (
         <div className="homePage">
@@ -13,9 +15,9 @@ const Home = () => {
                                 <p className="sortDesc">Passionate software developer specializing in creating dynamic and efficient solutions. Explore my portfolio to see how I turn complex challenges into elegant, functional designs.</p>
                             </div>
                             <div className="mediaLink_box">
-                                <a href="#"><i class="bi bi-linkedin "></i></a>
-                                <a href="#"><i class="bi bi-github"></i></a>
-                                <a href="#"><i class="bi bi-envelope-fill"></i></a>
+                                <NavLink to={linkedin}><i class="bi bi-linkedin "></i></NavLink>
+                                <NavLink to={github}><i class="bi bi-github"></i></NavLink>
+                                <NavLink to={email}><i class="bi bi-envelope-fill"></i></NavLink>
                             </div>
                         </div>
                     </div>

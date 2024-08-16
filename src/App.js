@@ -21,27 +21,25 @@ import Main from './containers/Main/Main.js';
 
 function App() {
 
-
-  
-  let url = crosURL + 'https://login.salesforce.com/services/oauth2/token'
-  let body = {
-    'grant_type': "password",
-    'client_id': process.env.REACT_APP_CONSUMERKEY,
-    'client_secret': process.env.REACT_APP_CONSUMERSECRET,
-    'username': process.env.REACT_APP_USERNAME,
-    'password': process.env.REACT_APP_PASSWORD + process.env.REACT_APP_SECURITYTOKEN
-  }
-  let header = {
-    'Accept': 'application/json',
-    'Content-Type': 'application/x-www-form-urlencoded'
-
-  }
-  let fetchData = useFetchState();
   const [token, setToken] = useState(null);
-
+  let fetchData = useFetchState();
+  
   useEffect(() => {
     //fetch salesforce token
     if (token == null) {
+      let url = crosURL + 'https://login.salesforce.com/services/oauth2/token'
+      let body = {
+        'grant_type': "password",
+        'client_id': process.env.REACT_APP_CONSUMERKEY,
+        'client_secret': process.env.REACT_APP_CONSUMERSECRET,
+        'username': process.env.REACT_APP_USERNAME,
+        'password': process.env.REACT_APP_PASSWORD + process.env.REACT_APP_SECURITYTOKEN
+      }
+      let header = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+
+      }
       fetchData(url, 'POST', body, header).then(res => {
 
         if (res.ok) {
@@ -54,21 +52,21 @@ function App() {
         }
       });
     }
-  }, [])
+  }, [fetchData,token])
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Navbar/>}>
-        <Route index element={<Main token={token}/>} />
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='Project' element={<ProjectsPage token={token}/>}/>
-        <Route path='/project/:id' element={<ProjectDetail token={token}/>}/>
-        <Route path='*' element={<NotFound/>}/>
+      <Route path="/" element={<Navbar />}>
+        <Route index element={<Main token={token} />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='Project' element={<ProjectsPage token={token} />} />
+        <Route path='/project/:id' element={<ProjectDetail token={token} />} />
+        <Route path='*' element={<NotFound />} />
       </Route>
     )
   );
   return (
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
   );
 }
 

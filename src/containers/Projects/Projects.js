@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Slider from "react-slick";
 import { Project } from '../Project/Project';
 import SubHeader from '../SubHeader/SubHeader';
