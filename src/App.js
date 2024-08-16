@@ -5,7 +5,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import { useEffect, useState } from "react";
 import { useFetchState } from './customHook/useFetchState.js';
-import { crosURL } from './constant.js';
 import ProjectDetail from './containers/ProjectDetail/ProjectDetail.js'
 import {
   createBrowserRouter,
