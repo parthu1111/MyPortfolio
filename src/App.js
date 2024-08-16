@@ -38,7 +38,9 @@ function App() {
       let header = {
         'Accept': 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Methods':'*',
+        'Access-Control-Allow-Headers':'*'
 
       }
       fetchData(url, 'POST', body, header).then(res => {
