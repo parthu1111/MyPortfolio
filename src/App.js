@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     //fetch salesforce token
     if (token == null) {
-      let url ='https://login.salesforce.com/services/oauth2/token'
+      let url ='https://conga48-dev-ed.develop.my.salesforce.com/services/oauth2/token'
       let body = {
         'grant_type': "password",
         'client_id': process.env.REACT_APP_CONSUMERKEY,
