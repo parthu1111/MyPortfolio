@@ -37,9 +37,11 @@ function App() {
       let header = {
         'Accept': 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Methods':'*',
-        'Access-Control-Allow-Headers':'*'
+        'Access-Control-Allow-Origin':'https://zippy-kangaroo-8d99bf.netlify.app',
+        'Access-Control-Allow-Methods':'POST, PUT, PATCH, GET, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers':'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization',
+        'Access-Control-Allow-Credentials':true,
+
 
       }
       fetchData(url, 'POST', body, header).then(res => {
