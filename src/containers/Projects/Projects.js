@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Project } from '../Project/Project';
 import SubHeader from '../SubHeader/SubHeader';
 
-function Projects({projects}) {
+function Projects({ projects }) {
   var settings = {
     dots: false,
     infinite: true,
@@ -21,7 +21,7 @@ function Projects({projects}) {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots:false
+          dots: false
         }
       },
       {
@@ -46,11 +46,13 @@ function Projects({projects}) {
 
       <SubHeader title="PROJECTS" />
       <div className="row">
-        <Slider {...settings} >
-          {projects.map((item) => (
-            <Project data={item} key={item.Id} />
-          ))}
-        </Slider>
+        <div className="col-lg-4 col-md-12">
+          <Slider {...settings} >
+            {projects.map((item) => (
+              <Project data={item} key={item.Id} />
+            ))}
+          </Slider>
+        </div>
       </div>
     </div>
   );

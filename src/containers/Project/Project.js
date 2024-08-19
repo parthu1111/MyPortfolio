@@ -10,7 +10,7 @@ export const Project = ({ data }) => {
         return text;
     }
     return (
-        <div className="col-lg-4 col-md-12">
+        
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title">{data.Title__c}</h5>
@@ -18,6 +18,5 @@ export const Project = ({ data }) => {
                     <Link to={'/project/' + data.Id} className="btn btn-outline-secondary">More</Link>
                 </div>
             </div>
-        </div>
-    );
+    )
 }
