@@ -5,7 +5,7 @@ function Contact() {
 
     <div className="container my-4">
       <div className="row justify-content-center">
-        <div className="card col-4 m-3 p-3">
+        <div className="card col-lg-4 col-md-11 m-3 p-3">
           <div className="my-2">
             <h2 className="text-center">Contact Form</h2>
           </div>
