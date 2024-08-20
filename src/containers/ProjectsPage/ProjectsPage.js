@@ -28,7 +28,9 @@ function ProjectsPage({ token }) {
                     <div className="row my-3">
                         {data.map((item) => (
 
-                            <Project data={item} key={item.Id} />
+                            <div className="col-lg-4 col-md-12 my-2">
+                                <Project data={item} key={item.Id} />
+                            </div>
 
                         ))}
                     </div>
