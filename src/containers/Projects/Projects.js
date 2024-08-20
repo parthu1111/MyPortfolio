@@ -46,13 +46,13 @@ function Projects({ projects }) {
 
       <SubHeader title="PROJECTS" />
       <div className="row">
-        <div className="col-lg-4 col-md-12">
+       
           <Slider {...settings} >
             {projects.map((item) => (
               <Project data={item} key={item.Id} />
             ))}
           </Slider>
-        </div>
+        
       </div>
     </div>
   );
