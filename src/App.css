@@ -144,6 +144,17 @@
   width: 5rem !important;
   height: 5rem !important;
 }
+.slick-slide div{
+  height: 100% !important;
+}
+.slick-slider .slick-track{
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+.slick-slide{
+  height: auto !important;
+  padding: 0.4rem;
+}
 
 @media only screen and (max-width: 768px) {
 

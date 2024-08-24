@@ -5,7 +5,7 @@ import { email, github, linkedin } from '../../constant'
 function Footer() {
     return (
 
-        <div className="container-fluid">
+        <div>
             <div
                 className="text-center text-lg-start text-white"
                 style={{"background-color":'black'}}
