@@ -6,6 +6,7 @@ import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import { useEffect, useState } from "react";
 import { useFetchState } from './customHook/useFetchState.js';
 import ProjectDetail from './containers/ProjectDetail/ProjectDetail.js'
+import '../node_modules/animate.css/animate.min.css';
 import {
   createBrowserRouter,
   createRoutesFromElements,

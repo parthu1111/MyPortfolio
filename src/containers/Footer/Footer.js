@@ -74,10 +74,8 @@ function Footer() {
 
                 <div
                     className="text-center p-3"
-                >
-                    © 2020 Copyright:
-                    <NavLink className="text-white" to="https://google.com/"
-                    >portfolio.com</NavLink>
+                ><p>
+                    © 2020 Copyright: Made By <NavLink className="text-white" to="https://google.com/" ><strong>Parth Parmar</strong></NavLink></p>
                 </div>
 
             </div>
