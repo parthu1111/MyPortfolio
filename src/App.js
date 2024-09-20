@@ -48,7 +48,7 @@ function App() {
       fetchData(url, 'POST', body, header).then(res => {
 
         if (res.ok) {
-          console.log('parent');
+          console.log('parent2');
           console.log(res);
           setToken(res.res.data.access_token);
         }
