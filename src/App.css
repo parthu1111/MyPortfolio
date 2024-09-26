@@ -109,7 +109,7 @@
 .roboto-black-italic {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-style: italic;
+  font-style:normal;
 }
 
 
@@ -119,6 +119,9 @@
   border-radius: 25px;
 }
 
+.brandName{
+  font-size: calc(10px + 2.4vmin) !important;
+}
 .box_header {
   font-weight: 800;
 }
