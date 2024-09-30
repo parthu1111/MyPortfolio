@@ -38,7 +38,7 @@ function Main({ token }) {
                     <Home />
                     <About data={data} />
                     <Projects projects={data.Projects__r.records} />
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
                 :
                 <Loader/>

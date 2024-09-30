@@ -40,7 +40,7 @@ function ProjectDetail({token}) {
     <div className="container my-3">
       {data &&<div className="row justify-content-center">
         <div className="col-12 card">
-          <div className="row">
+          <div className="row p-4">
             <div className="col-12 projectTitle">
               <p className='text-center'>{data.Title__c}</p>
             </div>
@@ -78,7 +78,7 @@ function ProjectDetail({token}) {
                 <p className='text-center'>Technologies</p>
               </div>
               <div className="skill_box">
-                                {data.Technology__c.split(',').map((item,i)=>(<span className="skill_item" index={i}>{item}</span>))}
+                                {data.Technology__c.split(',').map((item,i)=>(<span className="skill_item m-2 m-md-1 p-3 rounded" index={i}>{item}</span>))}
                                
                             </div>
             </div>

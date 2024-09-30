@@ -18,6 +18,7 @@ import Contact from './containers/Contact/Contact.js'
 import NotFound from './containers/NotFound/NotFound.js';
 import ProjectsPage from './containers/ProjectsPage/ProjectsPage.js';
 import Main from './containers/Main/Main.js';
+import Footer from './containers/Footer/Footer.js';
 
 function App() {
 
@@ -61,7 +62,7 @@ function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Navbar />}>
+      <Route path="/" element={<><Navbar /><Footer/></>}>
         <Route index element={<Main token={token} />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='Project' element={<ProjectsPage token={token} />} />

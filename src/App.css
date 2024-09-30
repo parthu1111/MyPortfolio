@@ -1,10 +1,12 @@
 :root {
-  --primary-color: white;
-  --primary-bgColor: #212121;
+  --primary-color: #ffffff;
+  --primary-bgColor: #121212;
   --secondary-color: #FF6101;
   --secondary-text-color: #000000;
   --third-color: #ff7b29;
-  --secondary-bgcolor: #282828;
+  --secondary-bgcolor: #181818;
+  --third-bgcolor:#282828;
+  --secondary-textcolor:#b3b3b3;
 }
 
 .App {
@@ -124,7 +126,9 @@
   font-weight: 900;
   font-style: normal;
 }
-
+.footer{
+  background-color:var(--secondary-bgcolor);
+}
 
 .line {
   border: 2px solid rgb(70, 70, 70);
@@ -149,7 +153,7 @@
   margin: 1%; */
   border: 0.1px solid #c1c1c1;
   cursor: pointer;
-  background-color: var(--secondary-bgcolor);
+  background-color: var(--third-bgcolor);
 }
 
 .skill_item:hover {
@@ -334,10 +338,16 @@
 .contactButton {
   padding: 0% 2% 0% 4%;
 }
-
+.btn{
+  background-color: var(--secondary-textcolor) !important;
+}
+.btn:hover{
+  background-color:var(--third-color) !important;
+  color: var(--primary-color);
+}
 .card {
   border-radius: 4px;
-  background: var(--secondary-bgcolor) !important;
+  background: var(--third-bgcolor) !important;
   color: var(--primary-color) !important;
   box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
   transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
@@ -431,7 +441,7 @@
     margin-top: 7%;
     margin-bottom: 15%;
   }
-
+  
   .homeBody {
     height: auto !important;
   }

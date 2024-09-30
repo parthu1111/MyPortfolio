@@ -5,10 +5,9 @@ import { email, github, linkedin } from '../../constant'
 function Footer() {
     return (
 
-        <div>
+        <div className='footer'>
             <div
                 className="text-center text-lg-start text-white"
-                style={{"background-color":'black'}}
             >
                 <div className="container p-4 pb-0">
                     <div className="">

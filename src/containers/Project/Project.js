@@ -15,7 +15,7 @@ export const Project = ({ data }) => {
                 <div className="card-body">
                     <h5 className="card-title">{data.Title__c}</h5>
                     <p className="card-text">{getText(data.Description__c)}</p>
-                    <Link to={'/project/' + data.Id} className="btn btn-outline-secondary">More</Link>
+                    <Link to={'/project/' + data.Id} className="btn">More</Link>
                 </div>
             </div>
     )
