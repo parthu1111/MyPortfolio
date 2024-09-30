@@ -28,12 +28,13 @@ const About = ({ data }) => {
                         <div className="skill_box">
                             {record != null && record.Skill__c.split(',').map((item, i) => {
                                 // <span className="skill_item" index={i}>{item}</span>
-                                if(i%2===0){
-                                    return <div className="shadow-sm m-2 m-md-1 p-3 bg-white rounded skill_item rise-shake">{item}</div>
-                                }
-                                else{
-                                    return <div className="shadow-sm m-2 m-md-1 p-3 bg-white rounded skill_item skew-shake-y">{item}</div>
-                                }
+                                // if(i%2===0){
+                                //     return <div className="shadow-sm m-2 m-md-1 p-3 bg-white rounded skill_item rise-shake">{item}</div>
+                                // }
+                                // else{
+                                //     return <div className="shadow-sm m-2 m-md-1 p-3 bg-white rounded skill_item skew-shake-y">{item}</div>
+                                // }
+                                return <div className="shadow-sm m-2 m-md-1 p-3 rounded skill_item">{item}</div>
                                 
                             })
                             }
