@@ -187,7 +187,8 @@
 }
 
 .sortDesc {
-  font-size: 1.2rem;
+  font-size: calc(10px + 1.3vmin);
+  color: var(--secondary-textcolor);
 }
 
 .mediaLink_box i {
@@ -357,10 +358,18 @@
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
+.card-title{
+  font-size: calc(10px + 1.5vmin);
+}
 .card-text{
   text-align: justify;
-}
+  color:var(--secondary-textcolor);
+  font-size: calc(10px + 1vmin);
 
+}
+.secondary_text_color{
+  color: var(--secondary-textcolor);
+}
 @keyframes jump-shaking {
   0% {
     transform: translateX(0)
@@ -428,7 +437,13 @@
 .phoneView {
   display: none;
 }
-
+.about_box{
+  font-size: calc(10px + 1.3vmin);
+}
+.about_desc{
+  color:var(--secondary-textcolor);
+  
+}
 @media only screen and (max-width: 768px) {
 
   .about_box h3 {

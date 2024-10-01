@@ -17,7 +17,7 @@ const About = ({ data }) => {
                 <div className="col-lg-6 col-md-12">
                     <div className="about_box">
                         <h3 className="box_header mb-3">Get to know me!</h3>
-                        <div>
+                        <div className="about_desc">
                             {record != null && record.About__c}
                         </div>
                     </div>
