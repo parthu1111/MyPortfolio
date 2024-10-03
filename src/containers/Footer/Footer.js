@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { email, github, linkedin } from '../../constant'
 
 function Footer() {
+    
     return (
 
         <div className='footer'>
