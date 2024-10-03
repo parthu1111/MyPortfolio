@@ -50,7 +50,7 @@ function App() {
 
         if (res.ok) {
           console.log('parent2');
-          //console.log(res);
+          console.log(res);
           setToken(res.res.data.access_token);
         }
         else {
