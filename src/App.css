@@ -131,9 +131,10 @@
 }
 
 .line {
-  border: 2px solid rgb(70, 70, 70);
+  border: 2px solid var(--secondary-color);
   width: 10%;
   border-radius: 25px;
+
 }
 
 .brandName {
@@ -336,14 +337,19 @@
   color: var(--third-color);
 }
 
+.error{
+  font-weight: 600;
+  font:red;
+}
 .contactButton {
   padding: 0% 2% 0% 4%;
 }
 .btn{
-  background-color: var(--secondary-textcolor) !important;
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
 }
 .btn:hover{
-  background-color:var(--third-color) !important;
+  background-color:var(--secondary-textcolor) !important;
   color: var(--primary-color);
 }
 .card {

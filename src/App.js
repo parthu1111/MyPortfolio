@@ -64,7 +64,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<><Navbar /><Footer/></>}>
         <Route index element={<Main token={token} />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<Contact token={token}/>} />
         <Route path='Project' element={<ProjectsPage token={token} />} />
         <Route path='/project/:id' element={<ProjectDetail token={token} />} />
         <Route path='*' element={<NotFound />} />
