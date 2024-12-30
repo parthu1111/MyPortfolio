@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
 import { useEffect, useState } from "react";
-import { useFetchState } from './customHook/useFetchState.js';
+//import { useFetchState } from './customHook/useFetchState.js';
 import ProjectDetail from './containers/ProjectDetail/ProjectDetail.js'
 import '../node_modules/animate.css/animate.min.css';
 import {
@@ -22,51 +22,72 @@ import Footer from './containers/Footer/Footer.js';
 
 function App() {
 
-  const [token, setToken] = useState(null);
-  let fetchData = useFetchState();
+  //const [token, setToken] = useState(null);
+  //let fetchData = useFetchState();
+  const [data, setData] = useState(null);
   
   useEffect(() => {
     //fetch salesforce token
-    if (token == null) {
-      let url ='https://conga48-dev-ed.develop.my.salesforce.com/services/oauth2/token'
-      let body = {
-        'grant_type': "password",
-        'client_id': process.env.REACT_APP_CONSUMERKEY,
-        'client_secret': process.env.REACT_APP_CONSUMERSECRET,
-        'username': process.env.REACT_APP_USERNAME,
-        'password': process.env.REACT_APP_PASSWORD + process.env.REACT_APP_SECURITYTOKEN
-      }
-      let header = {
-        'Accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin':'https://zippy-kangaroo-8d99bf.netlify.app',
-        'Access-Control-Allow-Methods':'POST, PUT, PATCH, GET, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers':'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization',
-        'Access-Control-Allow-Credentials':true,
+    // if (token == null) {
+    //   let url ='https://conga48-dev-ed.develop.my.salesforce.com/services/oauth2/token'
+    //   let body = {
+    //     'grant_type': "password",
+    //     'client_id': process.env.REACT_APP_CONSUMERKEY,
+    //     'client_secret': process.env.REACT_APP_CONSUMERSECRET,
+    //     'username': process.env.REACT_APP_USERNAME,
+    //     'password': process.env.REACT_APP_PASSWORD + process.env.REACT_APP_SECURITYTOKEN
+    //   }
+    //   let header = {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/x-www-form-urlencoded',
+    //     'Access-Control-Allow-Origin':'https://zippy-kangaroo-8d99bf.netlify.app',
+    //     'Access-Control-Allow-Methods':'POST, PUT, PATCH, GET, DELETE, OPTIONS',
+    //     'Access-Control-Allow-Headers':'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization',
+    //     'Access-Control-Allow-Credentials':true,
 
 
-      }
-      fetchData(url, 'POST', body, header).then(res => {
+    //   }
+    //   fetchData(url, 'POST', body, header).then(res => {
 
-        if (res.ok) {
-          console.log('parent2');
-          console.log(res);
-          setToken(res.res.data.access_token);
-        }
-        else {
-          console.log(res);
-        }
+    //     if (res.ok) {
+    //       console.log('parent2');
+    //       console.log(res);
+    //       setToken(res.res.data.access_token);
+    //     }
+    //     else {
+    //       console.log(res);
+    //     }
+    //   });
+    // }
+    // fetchData("https://conga48-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/v1/getDetails", 'GET', null, null).then(res => {
+    //   console.log("public api to get data");
+    //   console.log(res.res.status);
+    //   console.log(res.res.data);
+    //   setData(res.res.data);
+    // });
+
+    const fetchData = async () => {
+      const response = await fetch("https://conga48-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/v1/getDetails", {
+        method: 'GET'
       });
-    }
-  }, [fetchData,token])
+      const resJson = await response.json();
+      //console.log("public api to get data");
+      //console.log(resJson);
+      setData(resJson);
+    };
+  
+    fetchData();
+  }, [])
+
+  
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<><Navbar /><Footer/></>}>
-        <Route index element={<Main token={token} />} />
-        <Route path='/contact' element={<Contact token={token}/>} />
-        <Route path='Project' element={<ProjectsPage token={token} />} />
-        <Route path='/project/:id' element={<ProjectDetail token={token} />} />
+        <Route index element={<Main  data2={data} />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='Project' element={<ProjectsPage  projects={data?.projects}/>} />
+        <Route path='/project/:id' element={<ProjectDetail  projects={data?.projects} />} />
         <Route path='*' element={<NotFound />} />
       </Route>
     )
