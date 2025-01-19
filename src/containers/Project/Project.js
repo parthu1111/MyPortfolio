@@ -9,13 +9,20 @@ export const Project = ({ data }) => {
         }
         return text;
     }
+
+    let convertRichTextToPlainText=(htmlContent) =>{
+        const tempElement = document.createElement('div');
+        tempElement.innerHTML = htmlContent;
+        let text=getText(tempElement.innerText);
+        return text;
+      }
     return (
         
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">{data.Title}</h5>
-                    <p className="card-text">{getText(data.Description)}</p>
-                    <Link to={'/project/' + data.Id} className="btn">More</Link>
+            <div className="card project_card p-1">
+                <div className="card-body d-flex flex-column">
+                    <h5 className="card-title project_card_title p-1">{data.Title}</h5>
+                    <p className="card-text project_card_text p-1 mb-3">{convertRichTextToPlainText(data.Description)}</p>
+                    <Link to={'/project/' + data.Id} className="btn moreButton mt-auto">More</Link>
                 </div>
             </div>
     )

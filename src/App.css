@@ -8,6 +8,9 @@
   --third-bgcolor:#282828;
   --secondary-textcolor:#b3b3b3;
 }
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
 .App {
   font-family: "Roboto", sans-serif;
@@ -16,7 +19,7 @@
   background-color: var(--primary-bgColor);
   color: var(--primary-color);
   min-height: 100vh;
-  min-width: 100vh;
+  /* min-width: 100vh; */
 }
 
 .App-logo {
@@ -272,11 +275,7 @@
   object-fit: cover;
 }
 
-.proj_header p {
-  font-size: 2.2rem;
-  font-weight: 600;
-  display: block;
-}
+
 
 .proj_text {
   text-align: justify;
@@ -352,7 +351,7 @@
   background-color:var(--secondary-textcolor) !important;
   color: var(--primary-color);
 }
-.card {
+.project_card {
   border-radius: 4px;
   background: var(--third-bgcolor) !important;
   color: var(--primary-color) !important;
@@ -360,21 +359,28 @@
   transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
 }
 
-.card:hover {
+.project_card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
-.card-title{
-  font-size: calc(10px + 1.5vmin);
+.project_card_title{
+  font-size: calc(10px + 1.5vmin) !important;
 }
-.card-text{
+.project_card_text{
   text-align: justify;
   color:var(--secondary-textcolor);
   font-size: calc(10px + 1vmin);
 
 }
+
 .secondary_text_color{
   color: var(--secondary-textcolor);
+}
+
+.moreButton{
+  display: block;
+  margin: 0 auto;
+  width: 50%;
 }
 @keyframes jump-shaking {
   0% {
@@ -450,6 +456,26 @@
   color:var(--secondary-textcolor);
   
 }
+
+.project_detail_header{
+  background-color: var(--secondary-bgcolor);
+}
+.projectDetail_Card{
+  border-radius: 4px;
+  /* background: var(--third-bgcolor) !important; */
+  color: var(--primary-color) !important;
+}
+.project_detail_body{
+  background: var(--third-bgcolor) !important;
+}
+.proj_detail_header p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  display: block;
+}
+/* .productdetail_col{
+  height: -webkit-fill-available !important;
+} */
 @media only screen and (max-width: 768px) {
 
   .about_box h3 {

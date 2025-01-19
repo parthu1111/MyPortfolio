@@ -5,22 +5,6 @@ import { Project } from '../Project/Project';
 
 function ProjectsPage({ token ,projects}) {
 
-    //let [data, setData] = useState(null);
-    //let fetchData = useFetchState();
-    // useEffect(() => {
-    //     if (token != null && data == null) {
-    //         let query = 'select FIELDS(ALL) from Project__c limit 200'
-    //         let url = crosURL + 'https://conga48-dev-ed.develop.my.salesforce.com/services/data/v61.0/query/?q=' + query;
-    //         fetchData(url, 'GET', null, { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' })
-    //             .then(res => {
-    //                 if (res.ok) {
-    //                     console.log(res.res.data.records);
-    //                     setData(res.res.data.records);
-    //                 }
-    //             })
-    //     }
-
-    // }, [token,data,fetchData])
     return (
         <>
             {projects &&
@@ -28,7 +12,7 @@ function ProjectsPage({ token ,projects}) {
                     <div className="row my-3">
                         {projects.map((item) => (
 
-                            <div className="col-lg-4 col-md-12 my-2">
+                            <div className="col-lg-4 col-md-12 my-2 d-flex align-items-stretch">
                                 <Project data={item} key={item.Id} />
                             </div>
 

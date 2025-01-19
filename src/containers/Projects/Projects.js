@@ -7,11 +7,11 @@ function Projects({ projects }) {
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 3500,
     cssEase: "linear",
     pauseOnHover: true,
     responsive: [

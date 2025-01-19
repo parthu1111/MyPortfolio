@@ -67,7 +67,7 @@ function App() {
     // });
 
     const fetchData = async () => {
-      //const url="https://conga48-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/v1/getDetails";
+      //const url="http://localhost:8888/api/v1/getdetails"
       const url="https://portfolioservices.netlify.app/api/v1/getdetails"
       const response = await fetch(url, {
         method: 'GET'
