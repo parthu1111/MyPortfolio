@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom';
 //import { crosURL } from '../../constant'
 //import { useFetchState } from '../../customHook/useFetchState'
 
@@ -60,6 +60,11 @@ function ProjectDetail({ projects }) {
                   </div>
 
                 </div>
+
+                { "Github" in data && data.Github !== "" && 
+                  <div className="my-4">
+                    <NavLink to={data.Github} target='_blank'><i class="bi bi-github secondaryColor icon_project_description"></i></NavLink>
+                  </div>}
               </div>
             </div>
 

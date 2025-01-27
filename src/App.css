@@ -473,6 +473,9 @@ body {
   font-weight: 400;
   display: block;
 }
+.icon_project_description{
+  font-size: 2rem;
+}
 /* .productdetail_col{
   height: -webkit-fill-available !important;
 } */
