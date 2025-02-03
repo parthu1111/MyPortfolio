@@ -27,44 +27,6 @@ function App() {
   const [data, setData] = useState(null);
   
   useEffect(() => {
-    //fetch salesforce token
-    // if (token == null) {
-    //   let url ='https://conga48-dev-ed.develop.my.salesforce.com/services/oauth2/token'
-    //   let body = {
-    //     'grant_type': "password",
-    //     'client_id': process.env.REACT_APP_CONSUMERKEY,
-    //     'client_secret': process.env.REACT_APP_CONSUMERSECRET,
-    //     'username': process.env.REACT_APP_USERNAME,
-    //     'password': process.env.REACT_APP_PASSWORD + process.env.REACT_APP_SECURITYTOKEN
-    //   }
-    //   let header = {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/x-www-form-urlencoded',
-    //     'Access-Control-Allow-Origin':'https://zippy-kangaroo-8d99bf.netlify.app',
-    //     'Access-Control-Allow-Methods':'POST, PUT, PATCH, GET, DELETE, OPTIONS',
-    //     'Access-Control-Allow-Headers':'Origin, X-Api-Key, X-Requested-With, Content-Type, Accept, Authorization',
-    //     'Access-Control-Allow-Credentials':true,
-
-
-    //   }
-    //   fetchData(url, 'POST', body, header).then(res => {
-
-    //     if (res.ok) {
-    //       console.log('parent2');
-    //       console.log(res);
-    //       setToken(res.res.data.access_token);
-    //     }
-    //     else {
-    //       console.log(res);
-    //     }
-    //   });
-    // }
-    // fetchData("https://conga48-dev-ed.develop.my.salesforce-sites.com/services/apexrest/api/v1/getDetails", 'GET', null, null).then(res => {
-    //   console.log("public api to get data");
-    //   console.log(res.res.status);
-    //   console.log(res.res.data);
-    //   setData(res.res.data);
-    // });
 
     const fetchData = async () => {
       //const url="http://localhost:8888/api/v1/getdetails"
