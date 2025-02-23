@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import {app_baseURL} from '../../constant.js';
 function Contact() {
 
-  // const navigate = useNavigate();
-  // let fetchData = useFetchState();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
