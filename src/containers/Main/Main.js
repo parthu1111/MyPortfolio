@@ -6,7 +6,9 @@ import Projects from '../Projects/Projects'
 //import { crosURL } from '../../constant'
 import Loader from '../Loader/Loader'
 
+
 function Main({ data2 }) {
+
     
     return (
         <>

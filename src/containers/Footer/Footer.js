@@ -50,7 +50,7 @@ function Footer() {
 
                             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                                 <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                                <p className='secondary_text_color'><i className="fas fa-home mr-3"></i> Shree ji road, Ahmedabad</p>
+                                {/* <p className='secondary_text_color'><i className="fas fa-home mr-3"></i> Shree ji road, Ahmedabad</p> */}
                                 <p className='secondary_text_color'><i className="fas fa-envelope mr-3"></i> parth9785@gmail.com</p>
                             </div>
 

@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../Images/test.png';
 import { email, github, linkedin } from '../../constant';
 import { TypeAnimation } from 'react-type-animation';
+// import trailhead from '../../Images/trailhead.png';
+// import { ReactComponent as MyIcon } from '../../Images/trailhead.svg';
 
 const Home = () => {
     let sequence=[
@@ -27,6 +29,10 @@ const Home = () => {
                                 <NavLink to={linkedin}><i class="bi bi-linkedin secondaryColor"></i></NavLink>
                                 <NavLink to={github}><i class="bi bi-github secondaryColor"></i></NavLink>
                                 <NavLink to={email}><i class="bi bi-envelope-fill secondaryColor"></i></NavLink>
+                                {/* <NavLink to={email}><img src={trailhead} alt='trailhead' className='trailheadIcon' /></NavLink>
+                                <NavLink to={email}>
+                                    <MyIcon className="bi secondaryColor icon-size" />
+                                </NavLink> */}
                             </div>
                         </div>
                     </div>

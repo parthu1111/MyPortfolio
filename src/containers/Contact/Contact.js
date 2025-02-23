@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useFetchState } from '../../customHook/useFetchState';
 import { useNavigate } from 'react-router-dom';
-function Contact({token}) {
+import {app_baseURL} from '../../constant.js';
+function Contact() {
 
-  const navigate = useNavigate();
-  let fetchData = useFetchState();
+  // const navigate = useNavigate();
+  // let fetchData = useFetchState();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,22 +21,20 @@ function Contact({token}) {
     console.log(formData.name);
     console.log(formData.email);
     
-    let url='https://conga48-dev-ed.develop.my.salesforce.com/services/data/v61.0/sobjects/Contact';
     let body={
       "LastName": formData.name,
       "Email":formData.email,
       "Description":formData.comment
     }
-    fetchData(url,'POST',body,{ 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' })
-    .then(res=>{
-      if(res.ok){
-        navigate('/');
-      }
-    })
-    .catch(err=>{
-      console.log(err);
-      
-    })
+    let response = await fetch(`${app_baseURL}/api/v1/sendemail`, {
+      method: 'POST',                     // HTTP method (POST)
+      headers: {
+        'Content-Type': 'application/json' // Set content type to JSON
+      },
+      body: JSON.stringify(body)          // Convert body object to a JSON string
+    });
+    console.log(JSON.stringify(response));
+    
   }
   
   return (
@@ -43,7 +42,7 @@ function Contact({token}) {
 
       <div className="container my-4">
       <div className="row justify-content-center">
-        <div className="card col-lg-4 col-md-11 m-3 p-3">
+        <div className="card col-lg-4 col-md-11 m-3 p-3 contact_card">
           <div className="my-2">
             <h2 className="text-center">Contact Form</h2>
           </div>
@@ -72,9 +71,10 @@ function Contact({token}) {
         </div>
       </div>
     </div>
+    
   
 
-  )
+  );
 
 }
 export default Contact

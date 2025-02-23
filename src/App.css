@@ -479,6 +479,21 @@ body {
 /* .productdetail_col{
   height: -webkit-fill-available !important;
 } */
+
+.contact_card{
+  background-color: var(--third-bgcolor) !important;
+  color: var(--primary-color) !important;
+}
+.trailheadIcon {
+  width: 2rem;  /* Match the font-size of icons */
+  height: 2rem; /* Maintain a square aspect ratio */
+  object-fit: contain; /* Ensures it scales properly */
+}
+.icon-size {
+  width: 3rem;
+  height: 3rem;
+  fill: currentColor; /* Matches Bootstrap icons */
+}
 @media only screen and (max-width: 768px) {
 
   .about_box h3 {
