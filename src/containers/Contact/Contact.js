@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { useFetchState } from '../../customHook/useFetchState';
-import { useNavigate } from 'react-router-dom';
 import {app_baseURL} from '../../constant.js';
 function Contact() {
 
